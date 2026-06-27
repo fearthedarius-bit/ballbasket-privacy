@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gizlilik Politikası — Ball Basket</title>
+  <title>Privacy Policy — Ball Basket</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -18,21 +18,9 @@
       padding: 36px 24px 28px;
       text-align: center;
     }
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    header p {
-      margin-top: 6px;
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-    main {
-      max-width: 720px;
-      margin: 40px auto;
-      padding: 0 20px 60px;
-    }
+    header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    header p { margin-top: 6px; font-size: 0.95rem; opacity: 0.85; }
+    main { max-width: 720px; margin: 40px auto; padding: 0 20px 60px; }
     .card {
       background: #fff;
       border-radius: 12px;
@@ -40,92 +28,162 @@
       margin-bottom: 20px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.07);
     }
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #2e7d32;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #e8f5e9;
-    }
+    h2 { font-size: 1.1rem; font-weight: 700; color: #2e7d32; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e8f5e9; }
     p { margin-bottom: 10px; font-size: 0.97rem; }
     ul { padding-left: 20px; margin-bottom: 10px; }
     ul li { margin-bottom: 6px; font-size: 0.97rem; }
-    .date {
-      text-align: center;
-      color: #888;
-      font-size: 0.85rem;
-      margin-top: 30px;
-    }
+    .date { text-align: center; color: #888; font-size: 0.85rem; margin-top: 30px; }
     a { color: #2e7d32; }
+    .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 6px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .lang-btn.active {
+      background: #fff;
+      color: #2e7d32;
+    }
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>🏀 Ball Basket</h1>
-  <p>Gizlilik Politikası</p>
+  <p class="header-sub">Gizlilik Politikası</p>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
 </header>
 
 <main>
 
-  <div class="card">
-    <h2>Genel Bilgi</h2>
-    <p>Ball Basket uygulaması, Şahin Özdemir tarafından geliştirilmiştir. Bu gizlilik politikası, uygulamanın hangi verileri topladığını ve bu verilerin nasıl kullanıldığını açıklamaktadır.</p>
-    <p>Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+  <!-- TÜRKÇE -->
+  <div data-lang="tr" class="visible">
+    <div class="card">
+      <h2>Genel Bilgi</h2>
+      <p>Ball Basket uygulaması, Şahin Özdemir tarafından geliştirilmiştir. Bu gizlilik politikası, uygulamanın hangi verileri topladığını ve bu verilerin nasıl kullanıldığını açıklamaktadır.</p>
+      <p>Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+    </div>
+    <div class="card">
+      <h2>Toplanan Veriler</h2>
+      <p>Uygulama aşağıdaki verileri toplayabilir:</p>
+      <ul>
+        <li><strong>Skor bilgisi:</strong> Oyun sonu girdiğiniz isim ve puanınız, çevrimiçi liderlik tablosu için sunucuya gönderilir. Bu işlem tamamen isteğe bağlıdır.</li>
+        <li><strong>Fotoğraf erişimi:</strong> "Fotoğraf Yükle" özelliğini kullanmayı tercih ederseniz, galerinizden seçtiğiniz görsel yalnızca cihazınızda kullanılır ve hiçbir sunucuya gönderilmez.</li>
+        <li><strong>Reklam verileri:</strong> Uygulama, Google AdMob aracılığıyla reklam göstermektedir. AdMob, reklam kişiselleştirme amacıyla cihaz tanımlayıcıları ve kullanım istatistikleri toplayabilir.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Verilerin Kullanımı</h2>
+      <ul>
+        <li>Çevrimiçi skor tablosunun oluşturulması</li>
+        <li>Reklam gösterimi (Google AdMob)</li>
+      </ul>
+      <p>Kişisel verileriniz hiçbir üçüncü tarafla ticari amaçla paylaşılmaz, satılmaz veya kiralanmaz.</p>
+    </div>
+    <div class="card">
+      <h2>Google AdMob</h2>
+      <p>Uygulama, Google LLC tarafından sağlanan AdMob reklam hizmetini kullanmaktadır.</p>
+      <p><a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+    </div>
+    <div class="card">
+      <h2>Çocukların Gizliliği</h2>
+      <p>Uygulama, 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamamaktadır.</p>
+    </div>
+    <div class="card">
+      <h2>Üçüncü Taraf Bağlantıları</h2>
+      <p>Skor tablosu için kullanılan servis yalnızca isim ve puan verisi saklar; bu veriler kamuya açık liderlik tablosunda görünür.</p>
+    </div>
+    <div class="card">
+      <h2>Politika Değişiklikleri</h2>
+      <p>Bu gizlilik politikası zaman zaman güncellenebilir. Değişiklikler bu sayfada yayımlanır.</p>
+    </div>
+    <div class="card">
+      <h2>İletişim</h2>
+      <p><strong>Geliştirici:</strong> Şahin Özdemir</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit" target="_blank">github.com/fearthedarius-bit</a></p>
+    </div>
+    <p class="date">Son güncelleme: 27 Haziran 2026</p>
   </div>
 
-  <div class="card">
-    <h2>Toplanan Veriler</h2>
-    <p>Uygulama aşağıdaki verileri toplayabilir:</p>
-    <ul>
-      <li><strong>Skor bilgisi:</strong> Oyun sonu girdiğiniz isim ve puanınız, çevrimiçi liderlik tablosu için sunucuya gönderilir. Bu işlem tamamen isteğe bağlıdır.</li>
-      <li><strong>Fotoğraf erişimi:</strong> "Fotoğraf Yükle" özelliğini kullanmayı tercih ederseniz, galerinizden seçtiğiniz görsel yalnızca cihazınızda kullanılır ve hiçbir sunucuya gönderilmez.</li>
-      <li><strong>Reklam verileri:</strong> Uygulama, Google AdMob aracılığıyla reklam göstermektedir. AdMob, reklam kişiselleştirme amacıyla cihaz tanımlayıcıları ve kullanım istatistikleri toplayabilir.</li>
-    </ul>
+  <!-- ENGLISH -->
+  <div data-lang="en">
+    <div class="card">
+      <h2>General Information</h2>
+      <p>Ball Basket is developed by Şahin Özdemir. This privacy policy explains what data the app collects and how it is used.</p>
+      <p>By using the app, you agree to this policy.</p>
+    </div>
+    <div class="card">
+      <h2>Data Collected</h2>
+      <p>The app may collect the following data:</p>
+      <ul>
+        <li><strong>Score data:</strong> The name and score you enter at the end of a game are sent to our server for the online leaderboard. This is entirely optional.</li>
+        <li><strong>Photo access:</strong> If you use the "Upload Photo" feature, the image you select from your gallery is used only on your device and is never sent to any server.</li>
+        <li><strong>Ad data:</strong> The app displays ads via Google AdMob. AdMob may collect device identifiers and usage statistics for ad personalization.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Use of Data</h2>
+      <ul>
+        <li>Building the online leaderboard</li>
+        <li>Ad display (Google AdMob)</li>
+      </ul>
+      <p>Your personal data is never shared, sold, or rented to any third party for commercial purposes.</p>
+    </div>
+    <div class="card">
+      <h2>Google AdMob</h2>
+      <p>The app uses the AdMob advertising service provided by Google LLC.</p>
+      <p><a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+    </div>
+    <div class="card">
+      <h2>Children's Privacy</h2>
+      <p>The app does not knowingly collect personal data from children under the age of 13.</p>
+    </div>
+    <div class="card">
+      <h2>Third-Party Links</h2>
+      <p>The service used for the leaderboard stores only name and score data, which is visible in the public leaderboard.</p>
+    </div>
+    <div class="card">
+      <h2>Policy Changes</h2>
+      <p>This privacy policy may be updated from time to time. Changes will be published on this page.</p>
+    </div>
+    <div class="card">
+      <h2>Contact</h2>
+      <p><strong>Developer:</strong> Şahin Özdemir</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit" target="_blank">github.com/fearthedarius-bit</a></p>
+    </div>
+    <p class="date">Last updated: June 27, 2026</p>
   </div>
-
-  <div class="card">
-    <h2>Verilerin Kullanımı</h2>
-    <p>Toplanan veriler yalnızca şu amaçlarla kullanılır:</p>
-    <ul>
-      <li>Çevrimiçi skor tablosunun oluşturulması</li>
-      <li>Reklam gösterimi (Google AdMob)</li>
-    </ul>
-    <p>Kişisel verileriniz hiçbir üçüncü tarafla ticari amaçla paylaşılmaz, satılmaz veya kiralanmaz.</p>
-  </div>
-
-  <div class="card">
-    <h2>Google AdMob</h2>
-    <p>Uygulama, Google LLC tarafından sağlanan AdMob reklam hizmetini kullanmaktadır. AdMob'un veri işleme politikası hakkında daha fazla bilgi almak için:</p>
-    <p><a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
-  </div>
-
-  <div class="card">
-    <h2>Çocukların Gizliliği</h2>
-    <p>Uygulama, 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamamaktadır. Ebeveynler veya veliler, çocuklarının veri paylaşımı konusunda endişe duyuyorlarsa bizimle iletişime geçebilirler.</p>
-  </div>
-
-  <div class="card">
-    <h2>Üçüncü Taraf Bağlantıları</h2>
-    <p>Uygulama, üçüncü taraf web sitelerine bağlantı içermemektedir. Skor tablosu için kullanılan JSONBin.io servisi yalnızca isim ve puan verisi saklar; bu veriler kamuya açık liderlik tablosunda görünür.</p>
-  </div>
-
-  <div class="card">
-    <h2>Politika Değişiklikleri</h2>
-    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Değişiklikler bu sayfada yayımlanır. Uygulamayı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
-  </div>
-
-  <div class="card">
-    <h2>İletişim</h2>
-    <p>Gizlilik politikamız hakkında sorularınız için:</p>
-    <p><strong>Geliştirici:</strong> Şahin Özdemir</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit" target="_blank">github.com/fearthedarius-bit</a></p>
-  </div>
-
-  <p class="date">Son güncelleme: 24 Haziran 2026</p>
 
 </main>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('visible', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+    document.querySelector('.header-sub').textContent = lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy';
+  }
+  // Tarayıcı diline göre otomatik seç
+  if(navigator.language && !navigator.language.startsWith('tr')) setLang('en');
+</script>
 
 </body>
 </html>
