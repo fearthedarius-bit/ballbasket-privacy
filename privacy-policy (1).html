@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Ball Basket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #FF7043;
+    --accent-dark: #E8542A;
+    --ink: #3A2B22;
+    --ink-soft: #6B5A4E;
+    --paper: #FFFBF6;
+    --card: #FFFFFF;
+    --line: #F0E4D8;
+    --cream: #FFE0B2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Nunito', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #FFE9C7 0%, #FFC9A6 340px, var(--paper) 340px);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+  header.hero {
+    text-align: center;
+    padding: 56px 20px 28px;
+  }
+  .icon-badge {
+    width: 68px; height: 68px;
+    background: var(--card);
+    border-radius: 22px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 34px;
+    box-shadow: 0 6px 18px rgba(58,43,34,0.18);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Baloo 2', 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  .subtitle {
+    color: rgba(58,43,34,0.72);
+    font-size: 1.05rem;
+    margin: 0 0 20px;
+    font-weight: 600;
+  }
+  .lang-toggle {
+    display: inline-flex;
+    background: rgba(255,255,255,0.6);
+    border-radius: 999px;
+    padding: 4px;
+    gap: 4px;
+    box-shadow: inset 0 0 0 1px rgba(58,43,34,0.1);
+  }
+  .lang-toggle button {
+    border: none;
+    background: transparent;
+    padding: 8px 22px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255,112,67,0.4);
+  }
+  main.card {
+    background: var(--card);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(58,43,34,0.10);
+    padding: 8px 36px 36px;
+    margin-top: -4px;
+  }
+  .updated {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    padding: 20px 0 4px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+  }
+  section { display: none; }
+  section.active { display: block; }
+  h2 {
+    font-family: 'Baloo 2', 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent-dark);
+    margin: 30px 0 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2:first-of-type { margin-top: 22px; }
+  p { margin: 0 0 14px; color: var(--ink); }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  li strong { color: var(--ink); }
+  a { color: var(--accent-dark); font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(255,112,67,0.35); }
+  a:hover { border-bottom-color: var(--accent-dark); }
+  .contact-box {
+    background: linear-gradient(135deg, #FFF3E6, #FFE9D6);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-top: 24px;
+  }
+  .contact-box p { margin: 0 0 6px; }
+  .contact-box p:last-child { margin: 0; }
+  footer {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    padding-top: 28px;
+  }
+  @media (max-width: 480px) {
+    header.hero { padding: 40px 16px 22px; }
+    h1 { font-size: 1.6rem; }
+    main.card { padding: 8px 22px 28px; border-radius: 18px; }
+    h2 { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="icon-badge">🏀</div>
+  <h1>Ball Basket</h1>
+  <p class="subtitle">Gizlilik Politikası · Privacy Policy</p>
+  <div class="lang-toggle">
+    <button id="btnTR" class="active" onclick="showLang('tr')">Türkçe</button>
+    <button id="btnEN" onclick="showLang('en')">English</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <main class="card">
+
+    <section id="tr" class="active">
+      <p class="updated">Son güncelleme: 6 Temmuz 2026</p>
+
+      <h2>👋 Genel Bilgi</h2>
+      <p>Ball Basket uygulaması, Şahin Özdemir tarafından geliştirilmiştir. Bu gizlilik politikası, uygulamanın hangi verileri topladığını ve bu verilerin nasıl kullanıldığını açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+
+      <h2>📋 Toplanan Veriler</h2>
+      <ul>
+        <li><strong>Hesap bilgileri:</strong> Google ile giriş yaptığınızda adınız, e-posta adresiniz ve (varsa) profil fotoğrafınız alınır.</li>
+        <li><strong>Kullanıcı adı ve profil fotoğrafı:</strong> Belirlediğiniz kullanıcı adı ve yüklediğiniz profil fotoğrafı, hesabınızla ilişkilendirilerek sunucuda (Supabase) saklanır ve arkadaşlarınıza/skor tablosunda görünür olabilir.</li>
+        <li><strong>Skor ve ilerleme verisi:</strong> Skorlarınız, seviyeleriniz, rozetleriniz ve oyun içi ilerlemeniz, çevrimiçi skor tablosu ve hesap senkronizasyonu için sunucuya kaydedilir.</li>
+        <li><strong>Arkadaş listesi:</strong> Eklediğiniz arkadaşların kullanıcı adları ve profil fotoğrafları, karşılaştırma yapabilmeniz için saklanır.</li>
+        <li><strong>Top özelleştirme fotoğrafı:</strong> "Fotoğraf Yükle" ile seçtiğiniz görsel yalnızca cihazınızda kullanılır, sunucuya gönderilmez.</li>
+        <li><strong>Reklam verileri:</strong> Google AdMob, reklam kişiselleştirme için cihaz tanımlayıcıları ve kullanım istatistikleri toplayabilir.</li>
+      </ul>
+
+      <h2>⚙️ Verilerin Kullanımı</h2>
+      <ul>
+        <li>Hesap oluşturma ve oturum yönetimi (Google Sign-In)</li>
+        <li>Çevrimiçi skor tablosu (genel, arkadaşlar, haftalık, günlük)</li>
+        <li>Rozet, seviye ve ilerleme takibi</li>
+        <li>Arkadaş sisteminin çalışması</li>
+        <li>Reklam gösterimi (Google AdMob)</li>
+      </ul>
+      <p>Kişisel verileriniz hiçbir üçüncü tarafla ticari amaçla paylaşılmaz, satılmaz veya kiralanmaz.</p>
+
+      <h2>🔑 Google Sign-In</h2>
+      <p>Oturum açma işlemi için Google Sign-In kullanılır. Bu sırada Google, adınız, e-posta adresiniz ve profil fotoğrafınız gibi temel bilgilerinizi bizimle paylaşır. <a href="https://policies.google.com/privacy" target="_blank">Google Gizlilik Politikası →</a></p>
+
+      <h2>🗄️ Supabase (Veri Depolama)</h2>
+      <p>Hesap bilgileriniz, kullanıcı adınız, skorlarınız, rozetleriniz ve arkadaş listeniz, veritabanı sağlayıcımız Supabase üzerinde güvenli şekilde saklanır. <a href="https://supabase.com/privacy" target="_blank">Supabase Gizlilik Politikası →</a></p>
+
+      <h2>📺 Google AdMob</h2>
+      <p>Uygulama, Google LLC tarafından sağlanan AdMob reklam hizmetini kullanır. <a href="https://policies.google.com/technologies/ads" target="_blank">Google Reklam Politikası →</a></p>
+
+      <h2>🧒 Çocukların Gizliliği</h2>
+      <p>Uygulama, 13 yaşın altındaki çocuklardan bilerek hassas kişisel veri toplamamaktadır.</p>
+
+      <h2>🗑️ Verilerinizin Kontrolü</h2>
+      <p>Hesabınızı ve ilişkili tüm verilerinizi uygulama içindeki ayarlar menüsünden silebilir, ya da bizimle iletişime geçerek silinmesini talep edebilirsiniz.</p>
+
+      <h2>🔄 Politika Değişiklikleri</h2>
+      <p>Bu gizlilik politikası zaman zaman güncellenebilir. Değişiklikler bu sayfada yayımlanır.</p>
+
+      <div class="contact-box">
+        <p><strong>Geliştirici:</strong> Şahin Özdemir</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit" target="_blank">github.com/fearthedarius-bit</a></p>
+      </div>
+    </section>
+
+    <section id="en">
+      <p class="updated">Last updated: July 6, 2026</p>
+
+      <h2>👋 General Information</h2>
+      <p>Ball Basket is developed by Şahin Özdemir. This privacy policy explains what data the app collects and how it is used. By using the app, you agree to this policy.</p>
+
+      <h2>📋 Data Collected</h2>
+      <ul>
+        <li><strong>Account information:</strong> When you sign in with Google, your name, email address, and (if available) profile photo are collected.</li>
+        <li><strong>Username and profile photo:</strong> Your username and uploaded profile photo are stored on our server (Supabase) linked to your account, and may be visible to friends/on leaderboards.</li>
+        <li><strong>Score and progress data:</strong> Your scores, levels, badges, and progress are saved to our server for the online leaderboard and account sync.</li>
+        <li><strong>Friend list:</strong> Usernames and profile photos of friends you add are stored so you can compare scores.</li>
+        <li><strong>Ball customization photo:</strong> The image you select via "Upload Photo" is used only on your device and is never sent to any server.</li>
+        <li><strong>Ad data:</strong> Google AdMob may collect device identifiers and usage statistics for ad personalization.</li>
+      </ul>
+
+      <h2>⚙️ Use of Data</h2>
+      <ul>
+        <li>Account creation and session management (Google Sign-In)</li>
+        <li>Online leaderboard (global, friends, weekly, daily)</li>
+        <li>Badge, level, and progress tracking</li>
+        <li>Friend system functionality</li>
+        <li>Ad display (Google AdMob)</li>
+      </ul>
+      <p>Your personal data is never shared, sold, or rented to any third party for commercial purposes.</p>
+
+      <h2>🔑 Google Sign-In</h2>
+      <p>The app uses Google Sign-In for authentication. Google shares basic account information such as your name, email, and profile photo with us. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy →</a></p>
+
+      <h2>🗄️ Supabase (Data Storage)</h2>
+      <p>Your account information, username, scores, badges, and friend list are securely stored using our database provider, Supabase. <a href="https://supabase.com/privacy" target="_blank">Supabase Privacy Policy →</a></p>
+
+      <h2>📺 Google AdMob</h2>
+      <p>The app uses the AdMob advertising service provided by Google LLC. <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Policy →</a></p>
+
+      <h2>🧒 Children's Privacy</h2>
+      <p>The app does not knowingly collect sensitive personal data from children under the age of 13.</p>
+
+      <h2>🗑️ Your Data Controls</h2>
+      <p>You can delete your account and all associated data from the settings menu in the app, or request deletion by contacting us.</p>
+
+      <h2>🔄 Policy Changes</h2>
+      <p>This privacy policy may be updated from time to time. Changes will be published on this page.</p>
+
+      <div class="contact-box">
+        <p><strong>Developer:</strong> Şahin Özdemir</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit" target="_blank">github.com/fearthedarius-bit</a></p>
+      </div>
+    </section>
+
+  </main>
+  <footer>Ball Basket © 2026</footer>
+</div>
+
+<script>
+  function showLang(lang){
+    document.getElementById('tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('en').classList.toggle('active', lang === 'en');
+    document.getElementById('btnTR').classList.toggle('active', lang === 'tr');
+    document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  }
+</script>
+
+</body>
+</html>
