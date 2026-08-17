@@ -1,183 +1,180 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hesap Silme — Ball Basket</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jarly Pop — Hesap ve Veri Silme / Account &amp; Data Deletion</title>
 <style>
-  :root {
-    --accent: #FF7043;
-    --accent-dark: #E8542A;
-    --ink: #3A2B22;
-    --ink-soft: #6B5A4E;
-    --paper: #FFFBF6;
-    --card: #FFFFFF;
-    --line: #F0E4D8;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: 'Nunito', -apple-system, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(180deg, #FFE9C7 0%, #FFC9A6 340px, var(--paper) 340px);
-    color: var(--ink);
-    line-height: 1.65;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
-  header.hero { text-align: center; padding: 56px 20px 28px; }
-  .icon-badge {
-    width: 68px; height: 68px;
-    background: var(--card);
-    border-radius: 22px;
-    display: inline-flex; align-items: center; justify-content: center;
-    font-size: 34px;
-    box-shadow: 0 6px 18px rgba(58,43,34,0.18);
-    margin-bottom: 18px;
-  }
-  h1 { font-family: 'Baloo 2', sans-serif; font-size: 2rem; font-weight: 800; margin: 0 0 6px; }
-  .subtitle { color: rgba(58,43,34,0.72); font-size: 1.05rem; margin: 0; font-weight: 600; }
-  .lang-toggle {
-    display: inline-flex; background: rgba(255,255,255,0.6); border-radius: 999px;
-    padding: 4px; gap: 4px; margin-top: 20px;
-    box-shadow: inset 0 0 0 1px rgba(58,43,34,0.1);
-  }
-  .lang-toggle button {
-    border: none; background: transparent; padding: 8px 22px; border-radius: 999px;
-    font-family: inherit; font-weight: 800; font-size: 0.9rem; color: var(--ink-soft); cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-  }
-  .lang-toggle button.active { background: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(255,112,67,0.4); }
-  main.card {
-    background: var(--card); border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(58,43,34,0.10);
-    padding: 8px 36px 36px; margin-top: -4px;
-  }
-  section { display: none; }
-  section.active { display: block; }
-  h2 {
-    font-family: 'Baloo 2', sans-serif; font-size: 1.15rem; font-weight: 800;
-    color: var(--accent-dark); margin: 30px 0 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  h2:first-of-type { margin-top: 22px; }
-  p { margin: 0 0 14px; }
-  ol, ul { margin: 0 0 14px; padding-left: 22px; }
-  li { margin-bottom: 10px; }
-  .steps {
-    background: linear-gradient(135deg, #FFF3E6, #FFE9D6);
-    border-radius: 16px;
-    padding: 20px 24px;
-    margin: 16px 0;
-  }
-  .steps li { font-weight: 700; }
-  .data-box {
-    background: #FFF3F0;
-    border-left: 4px solid var(--accent);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin: 16px 0;
-  }
-  .data-box p:last-child { margin: 0; }
-  footer { text-align: center; color: var(--ink-soft); font-size: 0.8rem; padding-top: 28px; }
-  @media (max-width: 480px) {
-    header.hero { padding: 40px 16px 22px; }
-    h1 { font-size: 1.6rem; }
-    main.card { padding: 8px 22px 28px; border-radius: 18px; }
-  }
+  :root { --ink:#2f2320; --muted:#6b5750; --line:#e8ddd2; --accent:#C62828; --bg:#fffaf6; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px 18px 60px; background:var(--bg); color:var(--ink);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         line-height:1.65; }
+  main { max-width:760px; margin:0 auto; }
+  h1 { font-size:1.6rem; margin:0 0 6px; }
+  h2 { font-size:1.18rem; margin:34px 0 10px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:1rem; margin:22px 0 6px; }
+  .app { font-size:.92rem; color:var(--muted); margin:0 0 4px; }
+  .updated { font-size:.82rem; color:var(--muted); margin:0 0 24px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:14px 0; }
+  .mail { display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+          padding:11px 20px; border-radius:10px; font-weight:700; margin:8px 0; }
+  .mail:hover { background:#a91d1d; }
+  ul { padding-left:22px; margin:8px 0; }
+  li { margin:5px 0; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.93rem; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:#f6efe8; font-weight:700; }
+  code { background:#f2ebe4; padding:2px 6px; border-radius:5px; font-size:.9em; }
+  hr.sep { border:0; border-top:3px double var(--line); margin:48px 0 34px; }
+  footer { margin-top:44px; padding-top:16px; border-top:1px solid var(--line);
+           font-size:.85rem; color:var(--muted); }
+  .en { color:var(--muted); }
+  .en h1, .en h2, .en h3, .en td, .en th, .en li, .en p { color:inherit; }
 </style>
 </head>
 <body>
+<main>
 
-<header class="hero">
-  <div class="icon-badge">🗑️</div>
-  <h1>Ball Basket</h1>
-  <p class="subtitle">Hesap Silme · Account Deletion</p>
-  <div class="lang-toggle">
-    <button id="btnTR" class="active" onclick="showLang('tr')">Türkçe</button>
-    <button id="btnEN" onclick="showLang('en')">English</button>
+  <h1>Hesap ve Veri Silme Talebi</h1>
+  <p class="app"><strong>Uygulama:</strong> Jarly Pop &nbsp;·&nbsp; <strong>Paket adı:</strong> <code>com.ailesepeti.oyun</code></p>
+  <p class="updated">Son güncelleme: 17 Ağustos 2026</p>
+
+  <p>Bu sayfa, <strong>Jarly Pop</strong> oyununda hesabınızın ve hesabınıza bağlı verilerin
+  nasıl silineceğini açıklar. Talebiniz için uygulamayı yüklü tutmanız veya oturum açmanız
+  gerekmez.</p>
+
+  <h2>Nasıl talep edilir?</h2>
+  <div class="card">
+    <p><strong>1. yol — E-posta (herkes kullanabilir):</strong> Aşağıdaki adrese, hesabınızın
+    <strong>kullanıcı adını</strong> veya <strong>kayıtlı e-posta adresini</strong> yazarak bir
+    silme talebi gönderin. Konu satırına “Hesap Silme” yazmanız işlemi hızlandırır.</p>
+    <a class="mail" href="mailto:fearthedarius@gmail.com?subject=Hesap%20Silme%20Talebi%20-%20Jarly%20Pop">fearthedarius@gmail.com adresine yaz</a>
+    <p style="font-size:.9rem;margin:6px 0 0;">Talebiniz, kimlik doğrulaması yapıldıktan sonra
+    <strong>en geç 7 iş günü içinde</strong> tamamlanır ve sonuç size e-posta ile bildirilir.</p>
   </div>
-</header>
+  <div class="card">
+    <p><strong>2. yol — Uygulama içinden:</strong> Oyunu açın →
+    <strong>Ayarlar</strong> → <strong>🗑️ Hesabımı Sil</strong>. Bu bağlantı sizi doğrudan bu
+    sayfaya yönlendirir.</p>
+  </div>
 
-<div class="wrap">
-  <main class="card">
+  <h2>Silinen veriler</h2>
+  <p>Talebiniz tamamlandığında aşağıdakiler <strong>kalıcı olarak</strong> silinir ve geri
+  getirilemez:</p>
+  <ul>
+    <li>Hesabınız ve giriş bilgileri (e-posta ile kayıt ve Google ile giriş bağlantısı dahil)</li>
+    <li>Profil bilgileriniz: kullanıcı adı, profil fotoğrafı, seviye ve XP</li>
+    <li>Tüm oyun skorlarınız ve skor tablosu kayıtlarınız</li>
+    <li>Rozetler, başarımlar, günlük giriş serisi ve görev ilerlemeniz</li>
+    <li>Oyun içi para birimi (altın), jokerler ve satın aldığınız kozmetik ürünler</li>
+    <li>Arkadaş listeniz ve gönderdiğiniz/aldığınız arkadaşlık istekleri</li>
+    <li>Çok oyunculu (yarış) geçmişiniz ve lig puanınız</li>
+    <li>Paylaştığınız özel top paketleri ve bunlara ait fotoğraflar</li>
+  </ul>
+  <p>Cihazınızda yerel olarak saklanan veriler (kayıtlı oyun, ayarlar, cihaza yüklediğiniz
+  fotoğraflar) uygulamayı kaldırdığınızda cihazınızdan silinir.</p>
 
-    <section id="tr" class="active">
-      <h2>✉️ Hesabınızı Nasıl Silersiniz</h2>
-      <p>Şu an için hesap silme talebinizi e-posta yoluyla iletebilirsiniz. Talebiniz alındıktan sonra hesabınız ve ilişkili tüm verileriniz manuel olarak, güvenli şekilde silinir.</p>
-      <div class="steps">
-        <ol style="margin:0;padding-left:20px;">
-          <li>Aşağıdaki e-posta adresine, hesabınızla ilişkili <strong>kullanıcı adınızı veya e-posta adresinizi</strong> belirterek bir silme talebi gönderin: <strong>fearthedarius@gmail.com</strong></li>
-          <li>Talebiniz <strong>7 iş günü içinde</strong> işleme alınır ve hesabınız kalıcı olarak silinir</li>
-          <li>İşlem tamamlandığında size onay için bilgi verilir</li>
-        </ol>
-      </div>
-      <p>Uygulama içinden doğrudan (otomatik) hesap silme özelliği yakında eklenecektir.</p>
+  <h2>Saklanan veriler ve saklama süresi</h2>
+  <p>Hesabınız silindikten sonra yalnızca aşağıdaki veriler, belirtilen amaç ve süreyle
+  saklanabilir. Bu kayıtlar <strong>kimliğinizle ilişkilendirilemeyecek şekilde anonimleştirilir</strong>
+  (hesap kimliğiniz kaldırılır):</p>
+  <table>
+    <tr><th>Veri</th><th>Neden saklanır</th><th>Saklama süresi</th></tr>
+    <tr>
+      <td>Anonim oyun oturumu istatistikleri (skor, süre, oynanan mod)</td>
+      <td>Oyun dengesi analizi ve hata ayıklama</td>
+      <td>En fazla 90 gün, sonra otomatik silinir</td>
+    </tr>
+    <tr>
+      <td>Anonim işlem kayıtları (oyun içi altın hareketleri)</td>
+      <td>Hile/istismar tespiti ve muhasebe denetimi</td>
+      <td>En fazla 12 ay, sonra otomatik silinir</td>
+    </tr>
+  </table>
+  <p style="font-size:.92rem;">Bunların dışında kişisel verileriniz saklanmaz. Reklam ve satın alma
+  kayıtları Google (AdMob / Google Play) tarafından kendi politikaları kapsamında işlenir; bu
+  veriler tarafımızda tutulmaz.</p>
 
-      <h2>🗄️ Silinen Veriler</h2>
-      <div class="data-box">
-        <p>Hesabınızı sildiğinizde aşağıdaki veriler kalıcı olarak kaldırılır:</p>
-        <ul>
-          <li>Kullanıcı adınız ve profil fotoğrafınız</li>
-          <li>Oyun skorlarınız, seviyeleriniz ve rozetleriniz</li>
-          <li>Arkadaş listeniz</li>
-          <li>Hesap bilgileriniz (Google Sign-In bağlantısı dahil)</li>
-        </ul>
-      </div>
+  <h2>Sorularınız için</h2>
+  <p>Silme süreci veya verilerinizle ilgili her konuda
+  <a href="mailto:fearthedarius@gmail.com">fearthedarius@gmail.com</a> adresinden bize
+  ulaşabilirsiniz.</p>
 
-      <h2>⏱️ Saklama Süresi</h2>
-      <p>Talebiniz onaylandıktan sonra veriler <strong>7 iş günü içinde</strong> sunucularımızdan tamamen kaldırılır.</p>
+  <hr class="sep">
 
-      <div class="steps">
-        <p style="margin:0;"><strong>Geliştirici:</strong> Şahin Özdemir</p>
-        <p style="margin:0;"><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit">github.com/fearthedarius-bit</a></p>
-      </div>
-    </section>
+  <div class="en" lang="en">
+    <h1>Account &amp; Data Deletion Request</h1>
+    <p class="app"><strong>App:</strong> Jarly Pop &nbsp;·&nbsp; <strong>Package name:</strong> <code>com.ailesepeti.oyun</code></p>
+    <p class="updated">Last updated: 17 August 2026</p>
 
-    <section id="en">
-      <h2>✉️ How to Delete Your Account</h2>
-      <p>You can currently request account deletion by email. Once your request is received, your account and all associated data will be manually and securely deleted.</p>
-      <div class="steps">
-        <ol style="margin:0;padding-left:20px;">
-          <li>Send a deletion request to the email address below, including your <strong>username or the email address</strong> associated with your account: <strong>fearthedarius@gmail.com</strong></li>
-          <li>Your request will be processed within <strong>7 business days</strong>, and your account will be permanently deleted</li>
-          <li>You will receive a confirmation once the process is complete</li>
-        </ol>
-      </div>
-      <p>An automatic, in-app account deletion feature will be added soon.</p>
+    <p>This page explains how to delete your <strong>Jarly Pop</strong> account and the data
+    associated with it. You do not need to have the app installed or be signed in to make a
+    request.</p>
 
-      <h2>🗄️ Data That Is Deleted</h2>
-      <div class="data-box">
-        <p>When you delete your account, the following data is permanently removed:</p>
-        <ul>
-          <li>Your username and profile photo</li>
-          <li>Your game scores, levels, and badges</li>
-          <li>Your friend list</li>
-          <li>Your account information (including Google Sign-In link)</li>
-        </ul>
-      </div>
+    <h2>How to request deletion</h2>
+    <div class="card">
+      <p><strong>Option 1 — Email (available to everyone):</strong> Send a deletion request to the
+      address below, including your account’s <strong>username</strong> or
+      <strong>registered email address</strong>. Using “Account Deletion” as the subject speeds
+      things up.</p>
+      <a class="mail" href="mailto:fearthedarius@gmail.com?subject=Account%20Deletion%20Request%20-%20Jarly%20Pop">Email fearthedarius@gmail.com</a>
+      <p style="font-size:.9rem;margin:6px 0 0;">After identity verification, your request is
+      completed <strong>within 7 business days</strong> and the outcome is confirmed by email.</p>
+    </div>
+    <div class="card">
+      <p><strong>Option 2 — From inside the app:</strong> Open the game →
+      <strong>Settings</strong> → <strong>🗑️ Delete My Account</strong>. That link brings you
+      directly to this page.</p>
+    </div>
 
-      <h2>⏱️ Retention Period</h2>
-      <p>Once your request is confirmed, data is fully removed from our servers within <strong>7 business days</strong>.</p>
+    <h2>Data that is deleted</h2>
+    <p>Once your request is completed, the following is <strong>permanently deleted</strong> and
+    cannot be recovered:</p>
+    <ul>
+      <li>Your account and sign-in credentials (including email sign-up and Google Sign-In link)</li>
+      <li>Profile details: username, profile photo, level and XP</li>
+      <li>All of your game scores and leaderboard entries</li>
+      <li>Badges, achievements, daily login streak and quest progress</li>
+      <li>In-game currency (gold), jokers and purchased cosmetic items</li>
+      <li>Your friends list and any friend requests sent or received</li>
+      <li>Your multiplayer (race) history and league points</li>
+      <li>Custom ball packs you shared and the photos belonging to them</li>
+    </ul>
+    <p>Data stored locally on your device (saved game, settings, photos you added on the device) is
+    removed from your device when you uninstall the app.</p>
 
-      <div class="steps">
-        <p style="margin:0;"><strong>Developer:</strong> Şahin Özdemir</p>
-        <p style="margin:0;"><strong>GitHub:</strong> <a href="https://github.com/fearthedarius-bit">github.com/fearthedarius-bit</a></p>
-      </div>
-    </section>
+    <h2>Data that is retained, and for how long</h2>
+    <p>After your account is deleted, only the data below may be retained, for the stated purpose
+    and period. These records are <strong>anonymised so they can no longer be linked to you</strong>
+    (your account identifier is removed):</p>
+    <table>
+      <tr><th>Data</th><th>Why it is kept</th><th>Retention period</th></tr>
+      <tr>
+        <td>Anonymous gameplay session statistics (score, duration, mode played)</td>
+        <td>Game balance analysis and debugging</td>
+        <td>Up to 90 days, then deleted automatically</td>
+      </tr>
+      <tr>
+        <td>Anonymous transaction records (in-game gold movements)</td>
+        <td>Cheating/abuse detection and accounting audit</td>
+        <td>Up to 12 months, then deleted automatically</td>
+      </tr>
+    </table>
+    <p style="font-size:.92rem;">No other personal data is retained. Advertising and purchase
+    records are processed by Google (AdMob / Google Play) under their own policies and are not held
+    by us.</p>
 
-  </main>
-  <footer>Ball Basket © 2026</footer>
-</div>
+    <h2>Questions</h2>
+    <p>For anything about the deletion process or your data, contact us at
+    <a href="mailto:fearthedarius@gmail.com">fearthedarius@gmail.com</a>.</p>
+  </div>
 
-<script>
-  function showLang(lang){
-    document.getElementById('tr').classList.toggle('active', lang === 'tr');
-    document.getElementById('en').classList.toggle('active', lang === 'en');
-    document.getElementById('btnTR').classList.toggle('active', lang === 'tr');
-    document.getElementById('btnEN').classList.toggle('active', lang === 'en');
-  }
-</script>
+  <footer>
+    <strong>Jarly Pop</strong> · Geliştirici / Developer: silucrert ·
+    <a href="mailto:fearthedarius@gmail.com">fearthedarius@gmail.com</a>
+  </footer>
 
+</main>
 </body>
 </html>
